@@ -3,8 +3,21 @@
 // private Funcs
 void Game::initWindow()
 {
-    
-    this->window = new sf::RenderWindow(sf::VideoMode(800, 600), "Game Title");
+    std::ifstream winConfig("Config/window.ini");
+    sf::VideoMode winDimension; // Dimensiones de la ventana
+    unsigned frameLimit; // Frame Limit
+    bool vsync; // Vertical Sync
+
+    if(winConfig.is_open())
+    {
+        winConfig >> winDimension.width >> winDimension.height;
+        winConfig >> frameLimit;
+        winConfig >> vsync;
+    }
+
+    this->window = new sf::RenderWindow(winDimension, "Game Title");
+    this->window->setFramerateLimit(frameLimit);
+    this->window->setVerticalSyncEnabled(vsync);
 }
 
 // Constructor / Destructor
