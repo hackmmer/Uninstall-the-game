@@ -14,6 +14,11 @@ void Game::initWindow()
         winConfig >> frameLimit;
         winConfig >> vsync;
     }
+    else
+    {
+        std::cerr << "Cannot open Config/window.ini file" << std::endl;
+        return;
+    }
 
     this->window = new sf::RenderWindow(winDimension, "Game Title");
     this->window->setFramerateLimit(frameLimit);
