@@ -3,6 +3,7 @@
 // private Funcs
 void Game::initWindow()
 {
+    
     this->window = new sf::RenderWindow(sf::VideoMode(800, 600), "Game Title");
 }
 
@@ -18,6 +19,12 @@ Game::~Game()
 }
 
 // Public Funcs
+
+void Game::updateDt()
+{
+    this->dt = this->dtClock.restart().asSeconds();
+}
+
 void Game::updateSFMLEvents()
 {
     while(this->window->pollEvent(this->sfEvent))
@@ -36,6 +43,7 @@ void Game::render()
 
 void Game::update()
 {
+    this->updateDt();
     this->updateSFMLEvents();
 }
 
