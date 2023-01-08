@@ -32,3 +32,8 @@ La historia aún esta en desarrollo...
 
 * [Telegram](https://t.me/BlizzSoftword)
 * [Mail](mailto:blizzsoftword@gmail.com)
+
+### HackFox
+
+* [Telegram](https://t.me/ZeroHackZox)
+* [Mail](mailto:foxhack58@gmail.com)
