@@ -31,4 +31,4 @@ La historia aún esta en desarrollo...
 ### Blizz
 
 * [Telegram](https://t.me/BlizzSoftword)
-* [Mail](mailto://blizzsoftword@gmail.com)
+* [Mail](mailto:blizzsoftword@gmail.com)
