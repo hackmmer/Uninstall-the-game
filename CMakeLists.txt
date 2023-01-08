@@ -6,9 +6,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 find_package(SFML COMPONENTS graphics audio network system window REQUIRED)
 
-set(SOURCE src/Game.cpp src/State.cpp)
+set(SOURCE src/Game.cpp src/State.cpp States/GameState.cpp)
 
-include_directories(headers/)
+include_directories(headers/ States/)
 add_executable(ZSP src/main.cpp ${SOURCE})
 
 target_link_libraries(ZSP sfml-graphics sfml-audio sfml-system sfml-network sfml-window)
