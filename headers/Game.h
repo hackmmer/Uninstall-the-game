@@ -69,6 +69,7 @@ class Game{
         virtual ~Game();
 
         // Funcs
+        void endGame();
         void updateDt();
         void updateSFMLEvents();
         void render();

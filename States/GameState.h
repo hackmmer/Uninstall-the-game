@@ -9,8 +9,11 @@ class GameState : public State
         GameState(sf::RenderWindow *window);
         virtual ~GameState();
 
+        /// @brief Needed implementation of ``State``
         void endState();
+        /// @brief Needed implementation of ``State``
         void update(const float& df);
+        /// @brief Needed implementation of ``State``
         void render(sf::RenderTarget* target);
 };
 #endif

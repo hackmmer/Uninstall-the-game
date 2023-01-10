@@ -8,7 +8,6 @@
 #include <SFML/Window.hpp>
 
 #include <iostream>
-#include <ctime>
 #include <vector>
 #include <map>
 #include <stack>
@@ -21,11 +20,20 @@ class State
     private:
         std::vector <sf::Texture> textures;
         sf::RenderWindow *window;
+        bool quit;
 
     public:
         State(sf::RenderWindow *window);
         virtual ~State();
 
+        /// @brief Verifies if the game is gonna quit
+        void checkQuit();
+
+        /// @brief Verifies if quit?
+        /// @return the Quit value
+        const bool getQuit() const;
+
+        /// @brief Called when a state is gonna quit (Like a State Destructor)
         virtual void endState() = 0;
         
         /// @brief This called every frame
