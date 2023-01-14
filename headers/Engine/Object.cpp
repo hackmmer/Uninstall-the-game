@@ -9,8 +9,15 @@ std::ostream &eng::operator<<(std::ostream &out, eng::Object o)
 
 void eng::Object::addChild(Object child, int pos = 0)
 {
+    this->childs.insert(this->childs.begin()+pos, child);
+}
+
+eng::Object& eng::Object::getChild(int pos)
+{
+    return this->childs.at(pos);
 }
 
 void eng::Object::remChild(int pos)
 {
+    this->childs.erase(this->childs.begin()+pos);
 }

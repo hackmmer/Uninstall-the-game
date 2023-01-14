@@ -2,19 +2,20 @@
 #define __E_BBJECT_H
 
 #include <iostream>
-#include <list>
+#include <vector>
 
 namespace eng
 {
     class Object
     {
         private:
-            std::list<Object> childs;
+            std::vector<Object> childs;
         public:
             std::string name;
             bool visible;
             int z;
 
+            Object& getChild(int pos);
             void addChild(Object child, int pos = 0);
             void remChild(int pos);
     };
