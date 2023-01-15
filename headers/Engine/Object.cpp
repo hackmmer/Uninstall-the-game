@@ -36,20 +36,6 @@ eng::Object::~Object()
 
 eng::Object &eng::Object::getChild(int pos)
 {
-    /**
-     * the stack is going like this:
-     * 
-     * 49
-     * 48
-     * 47
-     * ...
-     * 3
-     * 2
-     * 1
-     * 
-     * from beign to end
-     * i have to reverse that
-    */
     if(pos < 0)
     {
         return this->childs[this->childs.size() + pos];
