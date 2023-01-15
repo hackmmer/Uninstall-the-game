@@ -15,8 +15,16 @@ void GameState::endState()
 
 void GameState::update(const float &df)
 {
+    eng::Object o;
+    
+    while(o.getChildsCount() < 50)
+    {
+        eng::Object tO;
+        tO.name = std::to_string(o.getChildsCount());
+        o.addChild(tO);
+    }
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-        std::cout<<"A\n";
+        std::cout << o.getChild(0) <<std::endl;
 }
 
 void GameState::render(sf::RenderTarget *target)
