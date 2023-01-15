@@ -24,7 +24,7 @@ void GameState::update(const float &df)
         o.addChild(tO);
     }
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-        std::cout << o.getChild(0) <<std::endl;
+        std::cout << o.getChild(-1) <<std::endl;
 }
 
 void GameState::render(sf::RenderTarget *target)
