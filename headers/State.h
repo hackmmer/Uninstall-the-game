@@ -13,6 +13,7 @@
 #include <stack>
 #include <fstream>
 #include <sstream>
+#include <Engine/Engine.h>
 
 class State
 {
