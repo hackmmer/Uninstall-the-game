@@ -31,7 +31,7 @@ eng::Object::Object(std::string name)
 
 eng::Object::~Object()
 {
-    
+    this->childs.clear();
 }
 
 eng::Object &eng::Object::getChild(int pos)
