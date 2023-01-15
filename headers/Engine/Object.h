@@ -15,9 +15,14 @@ namespace eng
             bool visible;
             int z;
 
+            Object();
+            Object(std::string name);
+            virtual ~Object();
+
             Object& getChild(int pos);
             void addChild(Object child, int pos = 0);
             void remChild(int pos);
+            size_t getChildsCount();
     };
 
     std::ostream& operator<<(std::ostream& out, eng::Object o);

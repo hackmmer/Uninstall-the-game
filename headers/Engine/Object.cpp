@@ -3,21 +3,67 @@
 std::ostream &eng::operator<<(std::ostream &out, eng::Object o)
 {
     // TODO: insert return statement here
-    out << "[" << &o << " Object]";
+    out << "[" << &o << " Object " << o.name << " " << o.getChildsCount() << "]";
     return out;
 }
 
-void eng::Object::addChild(Object child, int pos = 0)
+void eng::Object::addChild(Object child, int pos)
 {
-    this->childs.insert(this->childs.begin()+pos, child);
+    if(pos >= 0)
+        this->childs.insert(this->childs.begin()+pos, child);
+    else
+        this->childs.insert(this->childs.end() + (pos * -1), child);
 }
 
-eng::Object& eng::Object::getChild(int pos)
+eng::Object::Object()
 {
-    return this->childs.at(pos);
+    //this->childs.clear();
+    this->name = "Object";
+}
+
+eng::Object::Object(std::string name)
+{
+    this->childs.clear();
+    this->name = name;
+}
+
+eng::Object::~Object()
+{
+    
+}
+
+eng::Object &eng::Object::getChild(int pos)
+{
+    /**
+     * the stack is going like this:
+     * 
+     * 49
+     * 48
+     * 47
+     * ...
+     * 3
+     * 2
+     * 1
+     * 
+     * from beign to end
+     * i have to reverse that
+    */
+    if(pos < 0)
+    {
+        return this->childs[this->childs.size() + pos];
+    }
+    return this->childs[pos];
 }
 
 void eng::Object::remChild(int pos)
 {
-    this->childs.erase(this->childs.begin()+pos);
+    if(pos >= 0)
+        this->childs.erase(this->childs.begin()+pos);
+    else
+        this->childs.erase(this->childs.end()+(pos * -1));
+}
+
+size_t eng::Object::getChildsCount()
+{
+    return this->childs.size();
 }
