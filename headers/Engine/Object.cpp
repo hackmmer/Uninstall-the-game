@@ -9,7 +9,9 @@ std::ostream &eng::operator<<(std::ostream &out, eng::Object o)
 
 void eng::Object::addChild(Object child, int pos)
 {
-    if(pos >= 0)
+    if(pos == 0)
+        this->childs.insert(this->childs.end(), child);
+    else if(pos > 0)
         this->childs.insert(this->childs.begin()+pos, child);
     else
         this->childs.insert(this->childs.end() + (pos * -1), child);
