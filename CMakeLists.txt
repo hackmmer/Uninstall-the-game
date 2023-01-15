@@ -6,6 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 find_package(SFML COMPONENTS graphics audio network system window REQUIRED)
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
 set(SOURCE src/Game.cpp src/State.cpp States/GameState.cpp headers/Engine/Object.cpp)
 
 include_directories(headers/ States/)
