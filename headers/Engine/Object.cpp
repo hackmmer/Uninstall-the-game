@@ -55,3 +55,8 @@ size_t eng::Object::getChildsCount()
 {
     return this->childs.size();
 }
+
+std::vector<eng::Object> &eng::Object::getChilds()
+{
+    return this->childs;
+}

@@ -23,6 +23,7 @@ namespace eng
             void addChild(Object child, int pos = 0);
             void remChild(int pos);
             size_t getChildsCount();
+            std::vector<Object>& getChilds();
     };
 
     std::ostream& operator<<(std::ostream& out, eng::Object o);
