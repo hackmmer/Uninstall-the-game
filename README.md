@@ -26,6 +26,10 @@ Los gráficos del juego estan pensados en **pixelart**...
 
 La historia aún esta en desarrollo...
 
+## Futuras Plataformas soportadas
+* Windows
+* Linux
+
 ## Contacto de los desarrolladores
 
 ### Blizz
