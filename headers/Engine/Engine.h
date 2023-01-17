@@ -16,5 +16,6 @@
 #include <sstream>
 
 #include <Engine/Object.h>
+#include <Engine/Entity.h>
 
 #endif
