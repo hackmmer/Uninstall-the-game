@@ -6,7 +6,7 @@
 class State
 {
 
-    private:
+    protected:
         std::vector <sf::Texture> textures;
         sf::RenderWindow *window;
         bool quit;

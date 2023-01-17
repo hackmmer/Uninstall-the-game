@@ -12,7 +12,7 @@ class GameState : public State
         /// @brief Needed implementation of ``State``
         void endState();
         /// @brief Needed implementation of ``State``
-        void update(const float& df);
+        void update(const float& dt);
         /// @brief Needed implementation of ``State``
         void render(sf::RenderTarget* target);
 };

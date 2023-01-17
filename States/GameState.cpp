@@ -1,4 +1,5 @@
 #include "GameState.h"
+eng::Entity player;
 
 GameState::GameState(sf::RenderWindow *window) : State(window)
 {
@@ -13,20 +14,29 @@ void GameState::endState()
     std::cout << "Ending state...!!" << "\n";
 }
 
-void GameState::update(const float &df)
+void GameState::update(const float &dt)
 {
-    eng::Object o;
     
-    while(o.getChildsCount() < 50)
-    {
-        eng::Object tO;
-        tO.name = std::to_string(o.getChildsCount());
-        o.addChild(tO);
-    }
+    
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-        std::cout << o.getChild(-1) <<std::endl;
+    {
+        player.move(-1, 0, dt);
+    }
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+    {
+        player.move(1, 0, dt);
+    }
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+    {
+        player.move(0, -1, dt);
+    }
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+    {
+        player.move(0, 1, dt);
+    }
 }
 
 void GameState::render(sf::RenderTarget *target)
 {
+    player.draw(this->window);
 }
