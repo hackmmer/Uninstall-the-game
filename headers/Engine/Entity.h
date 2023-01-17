@@ -10,7 +10,7 @@ namespace eng
     class Entity : public Object
     {
         protected:
-            sf::RectangleShape sprite;
+            sf::Sprite sprite;
             float speed;
 
             float x;
