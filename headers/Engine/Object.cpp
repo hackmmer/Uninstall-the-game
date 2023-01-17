@@ -19,19 +19,18 @@ void eng::Object::addChild(Object child, int pos)
 
 eng::Object::Object()
 {
-    //this->childs.clear();
+    this->childs.clear();
     this->name = "Object";
 }
 
 eng::Object::Object(std::string name)
 {
-    this->childs.clear();
+    //this->childs.clear();
     this->name = name;
 }
 
 eng::Object::~Object()
 {
-    this->childs.clear();
 }
 
 eng::Object &eng::Object::getChild(int pos)
