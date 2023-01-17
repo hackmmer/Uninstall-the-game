@@ -7,7 +7,12 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 find_package(SFML COMPONENTS graphics audio network system window REQUIRED)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
-set(SOURCE src/Game.cpp src/State.cpp States/GameState.cpp headers/Engine/Object.cpp)
+
+file(GLOB SOURCE
+    "${CMAKE_SOURCE_DIR}/src/*"
+    "${CMAKE_SOURCE_DIR}/headers/*"
+    "${CMAKE_SOURCE_DIR}/headers/*/*"
+    "${CMAKE_SOURCE_DIR}/States/*")
 
 include_directories(headers/ States/)
 add_executable(ZSP src/main.cpp ${SOURCE})
