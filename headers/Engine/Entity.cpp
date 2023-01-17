@@ -33,8 +33,7 @@ void eng::Entity::draw(sf::RenderTarget* target)
 
 eng::Entity::Entity() : Object("Entity")
 {
-    this->sprite.setSize(sf::Vector2f(20.f, 20.f));
-    this->sprite.setFillColor(sf::Color::White);
+    // Need the sprite configuration
     this->speed = 100.f;
 }
 
