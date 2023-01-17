@@ -8,7 +8,7 @@ namespace eng
     class Entity : public Object
     {
         protected:
-            
+            sf::Sprite sprite;
 
         public:
             Entity();
