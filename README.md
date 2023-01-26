@@ -30,6 +30,7 @@ La historia aún esta en desarrollo...
 
 * Windows
 * Linux
+* Android (En investigacion...)
 
 ## Contacto de los desarrolladores
 
