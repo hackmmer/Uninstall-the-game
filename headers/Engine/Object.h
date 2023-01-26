@@ -1,5 +1,5 @@
 #ifndef __E_OBJECT_H
-#define __E_BBJECT_H
+#define __E_OBJECT_H
 
 #include <iostream>
 #include <vector>
