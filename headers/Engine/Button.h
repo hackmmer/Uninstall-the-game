@@ -24,9 +24,7 @@ namespace eng
             void (*onClick)();
 
         public: 
-            Button(float x, float y, sf::Texture& image, sf::Texture& hover, sf::Texture& pressed, const std::string& text);
-            
-
+            Button(float x, float y, sf::Texture& image, sf::Texture& hover, sf::Texture& pressed, const std::string& text, sf::Font font, sf::Color textColor = sf::Color::White, unsigned int textSize = 27);
             virtual ~Button();
 
             void setOnClick(void (*onClick)());
