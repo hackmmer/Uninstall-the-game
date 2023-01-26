@@ -1,7 +1,7 @@
 #include "Button.h"
 
 template <typename T>
-eng::Button<T>::Button(float x, float y, sf::Texture& normal, sf::Texture& hover, sf::Texture& pressed, const std::string& text)
+eng::Button<T>::Button(float x, float y, sf::Texture& normal, sf::Texture& hover, sf::Texture& pressed, const std::string& text, sf::Font font, sf::Color textColor = sf::Color::White, unsigned int textSize = 27)
 {
     this->normal = normal;
     this->hover = hover;
@@ -15,6 +15,9 @@ eng::Button<T>::Button(float x, float y, sf::Texture& normal, sf::Texture& hover
         this->image.getTextureRect().width/2.f - this->text.getLocalBounds().width/2.f,
         this->image.getTextureRect().height/2.f - this->text.getLocalBounds().height/2.f
     );
+    this->text.setFont(font);
+    this->text.setFillColor(textColor);
+    this->text.setCharacterSize(textSize);
 }
 template <typename T>
 eng::Button<T>::~Button()
