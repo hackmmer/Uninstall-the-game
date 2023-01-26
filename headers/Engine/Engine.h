@@ -17,5 +17,6 @@
 
 #include <Engine/Object.h>
 #include <Engine/Entity.h>
+#include <Engine/Button.h>
 
 #endif
