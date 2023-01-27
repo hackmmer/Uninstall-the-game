@@ -6,7 +6,7 @@
 namespace eng
 {
     template <typename T>
-    class Button: public Object
+    class Button : public Object
     {
         private:
             sf::Mouse mouse;

@@ -1,23 +1,5 @@
 #include "Entity.h"
 
-void eng::Entity::move(int direction)
-{
-    if(direction == 0) // UP
-    {
-
-    }
-    else if (direction == 1) // DOWN
-    {
-
-    }
-    else if (direction == 2) // RIGHT
-    {
-
-    }else if (direction == 3) // DOWN
-    {
-
-    }
-}
 
 void eng::Entity::move(const float x, const float y, const float &dt)
 {
@@ -26,7 +8,11 @@ void eng::Entity::move(const float x, const float y, const float &dt)
     this->sprite.move(sf::Vector2f(x, y));
 }
 
-void eng::Entity::draw(sf::RenderTarget* target)
+void eng::Entity::update(const float& dt)
+{
+}
+
+void eng::Entity::draw(sf::RenderTarget *target)
 {
     target->draw(this->sprite);
 }

@@ -1,31 +1,35 @@
 #ifndef __E_OBJECT_H
 #define __E_OBJECT_H
 
+
+#include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
+#include <SFML/Network.hpp>
+#include <SFML/System.hpp>
+#include <SFML/Window.hpp>
+
 #include <iostream>
 #include <vector>
+#include <map>
+#include <stack>
+#include <fstream>
+#include <sstream>
+
 
 namespace eng
 {
     class Object
     {
-        private:
-            std::vector<Object> childs;
         public:
             std::string name;
             bool visible;
-            int z;
 
             Object();
             Object(std::string name);
             virtual ~Object();
 
-            Object& getChild(int pos);
-            void addChild(Object child, int pos = 0);
-            void remChild(int pos);
-            size_t getChildsCount();
-            std::vector<Object>& getChilds();
+            virtual void draw(sf::RenderTarget* window) = 0;
+            virtual void update(const float& dt) = 0;
     };
-
-    std::ostream& operator<<(std::ostream& out, eng::Object o);
 }
 #endif

@@ -5,8 +5,6 @@
 
 namespace eng
 {
-    
-
     class Entity : public Object
     {
         protected:
@@ -17,15 +15,9 @@ namespace eng
             float y;
 
         public:
-            const static int UP = 0;
-            const static int DOWN = 1;
-            const static int RIGHT = 2;
-            const static int LEFT = 3;
-
-
-            void move(int direction);
             void move(float x, float y, const float& dt);
 
+            void update(const float& dt);
             void draw(sf::RenderTarget* target);
 
             Entity();
