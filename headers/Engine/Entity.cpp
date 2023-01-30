@@ -1,6 +1,5 @@
 #include "Entity.h"
 
-
 void eng::Entity::move(const float x, const float y, const float &dt)
 {
     this->x = x * speed * dt;
@@ -8,13 +7,17 @@ void eng::Entity::move(const float x, const float y, const float &dt)
     this->sprite.move(sf::Vector2f(x, y));
 }
 
-void eng::Entity::update(const float& dt)
+void eng::Entity::update(const float &dt)
 {
 }
 
 void eng::Entity::draw(sf::RenderTarget *target)
 {
-    target->draw(this->sprite);
+
+    if (this->visible)
+    {
+        target->draw(this->sprite);
+    }
 }
 
 eng::Entity::Entity() : Object("Entity")
