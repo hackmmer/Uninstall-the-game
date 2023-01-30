@@ -5,5 +5,6 @@
 #include <Engine/Entity.h>
 #include <Engine/Button.h>
 #include <Engine/Label.h>
+#include <Engine/ProgressBar.h>
 
 #endif

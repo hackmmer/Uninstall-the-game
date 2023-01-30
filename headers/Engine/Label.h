@@ -1,7 +1,7 @@
 #ifndef __E_LABEL_H
 #define __E_LABEL_H
 
-#include <Engine/Engine.h>
+#include "Object.h"
 
 namespace eng
 {
@@ -21,10 +21,8 @@ namespace eng
         Label(std::string text, const uint &size, const float &x, const float &y, sf::Font font);
         virtual ~Label();
 
-        void draw(sf::RenderTarget* window);
-        void update(const float& dt);
-
-        
+        void draw(sf::RenderTarget *window);
+        void update(const float &dt);
     };
 }
 #endif

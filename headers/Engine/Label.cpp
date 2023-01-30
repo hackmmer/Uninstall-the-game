@@ -10,7 +10,11 @@ eng::Label::~Label()
 
 void eng::Label::draw(sf::RenderTarget *window)
 {
-    window->draw(this->self);
+
+    if (this->visible)
+    {
+        window->draw(this->self);
+    }
 }
 
 void eng::Label::update(const float &dt)

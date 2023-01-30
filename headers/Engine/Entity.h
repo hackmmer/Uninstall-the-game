@@ -1,30 +1,28 @@
 #ifndef __E_ENTITY_H
 #define __E_ENTITY_H
 
-#include <Engine/Engine.h>
+#include "Object.h"
 
 namespace eng
 {
     class Entity : public Object
     {
-        protected:
-            sf::Sprite sprite;
-            float speed;
+    protected:
+        sf::Sprite sprite;
+        float speed;
 
-            float x;
-            float y;
+        float x;
+        float y;
 
-        public:
-            void move(float x, float y, const float& dt);
+    public:
+        void move(float x, float y, const float &dt);
 
-            void update(const float& dt);
-            void draw(sf::RenderTarget* target);
+        void update(const float &dt);
+        void draw(sf::RenderTarget *target);
 
-            Entity();
-            Entity(std::string name);
-            virtual ~Entity();
-
-
+        Entity();
+        Entity(std::string name);
+        virtual ~Entity();
     };
 
 }
