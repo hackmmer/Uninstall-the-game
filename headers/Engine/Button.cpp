@@ -38,10 +38,10 @@ T &eng::Button<T>::getTag()
 template <typename T>
 void eng::Button<T>::draw(sf::RenderTarget *window)
 {
-
     if (this->visible)
     {
         this->mousePos = window->mapPixelToCoords(this->mouse.getPosition((sf::Window)*window));
+        verifyClick();
         this->image.setTexture(this->texture);
         window->draw(this->image);
         window->draw(this->text);
@@ -49,25 +49,14 @@ void eng::Button<T>::draw(sf::RenderTarget *window)
 }
 
 template <typename T>
-void eng::Button<T>::setOnClick(void (*onClick)())
-{
-    this->onClick = onClick;
-}
-
-template <typename T>
 void eng::Button<T>::update(const float &dt)
 {
-    if (this->image.getGlobalBounds().contains(this->mousePos))
+    if (this->isHover())
     {
         this->image.setTexture(this->hover);
     }
     else
     {
         this->image.setTexture(this->normal);
-    }
-    if (this->image.getGlobalBounds().contains(this->mousePos) && this->mouse.isButtonPressed(sf::Mouse::Left))
-    {
-        this->image.setTexture(this->normal);
-        this->onClick();
     }
 }
