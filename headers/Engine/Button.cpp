@@ -1,7 +1,11 @@
 #include "Button.h"
 
 template <typename T>
-eng::Button<T>::Button(float x, float y, sf::Texture &normal, sf::Texture &hover, sf::Texture &pressed, const std::string &text, sf::Font font, sf::Color textColor, unsigned int textSize) : Object("Button")
+eng::Button<T>::Button(float x, float y, sf::Texture &normal, sf::Texture &hover, sf::Texture &pressed, const std::string &text, sf::Font font, sf::Color textColor, unsigned int textSize) : 
+Clickable("Button", 
+    normal.getSize(),
+    sf::Vector2f(x,y)
+)
 {
     this->normal = normal;
     this->hover = hover;
