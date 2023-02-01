@@ -4,6 +4,8 @@
 
 * RPG
 * Fantasía
+* Suspenso
+* Thriller
 * ...
 
 ## Resumen

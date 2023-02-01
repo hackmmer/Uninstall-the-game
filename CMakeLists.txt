@@ -4,6 +4,12 @@ Project(Zeno-Survival-Project)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+if(WIN32)
+	set(CMAKE_MODULE_PATH {CMAKE_MODULE_PATH} "C:/SFML-2.5.1/lib/cmake/SFML")
+	set(CMAKE_PREFIX_PATH "C:/SFML-2.5.1/lib/cmake/SFML")
+	set(SFML_DIR "C:/SFML-2.5.1/lib/cmake/SFML")
+endif()
+
 find_package(SFML COMPONENTS graphics audio network system window REQUIRED)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
