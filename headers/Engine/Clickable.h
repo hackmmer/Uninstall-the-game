@@ -8,23 +8,28 @@ namespace eng
     class Clickable : public Object
     {
 
-    private:
+    protected:
         sf::Mouse mouse;
         sf::Vector2f mousePos;
-        bool _hover;
         sf::FloatRect area;
 
-    protected:
+        unsigned short state;
         void (*onClick)();
 
     public:
+        enum states
+        {
+            IDLE = 0,
+            HOVER,
+            PRESSED
+        };
+
         virtual void draw(sf::RenderTarget *window) = 0;
         virtual void update(const float &dt) = 0;
 
         Clickable(std::string name, sf::Vector2f rect, sf::Vector2f pos);
         virtual ~Clickable();
 
-        bool isHover();
         void verifyClick();
         void setOnClick(void (*onClick)());
     };

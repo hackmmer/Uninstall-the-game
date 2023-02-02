@@ -9,7 +9,7 @@ eng::Label lbl5("Salir", 17, 15, 17*5*1.4, f);
 
 GameState::GameState(sf::RenderWindow *window) : State(window)
 {
-    f.loadFromFile("/usr/lib/ruby/3.1.0/rdoc/generator/template/darkfish/fonts/Lato-LightItalic.ttf");
+    f.loadFromFile("/home/blizz/Projects/Zeno-Survival-Project/Fonts/Lato-Light.ttf");
 }
 
 GameState::~GameState()

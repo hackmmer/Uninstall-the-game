@@ -22,7 +22,7 @@ namespace eng
     {
         public:
             std::string name;
-            bool visible;
+            bool visible = true;
 
             Object();
             Object(std::string name);
