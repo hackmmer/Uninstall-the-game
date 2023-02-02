@@ -42,8 +42,8 @@ void eng::Button<T>::draw(sf::RenderTarget *window)
 {
     if (this->visible)
     {
-        this->mousePos = window->mapPixelToCoords(this->mouse.getPosition((sf::Window)*window));
-        verifyClick();
+        //this->mousePos = window->mapPixelToCoords(this->mouse.getPosition((sf::Window)*window));
+        verifyClick(window->mapPixelToCoords(this->mouse.getPosition((sf::Window)*window)));
         this->image.setTexture(this->texture);
         window->draw(this->image);
         window->draw(this->text);

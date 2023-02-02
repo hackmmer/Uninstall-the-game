@@ -10,7 +10,6 @@ namespace eng
 
     protected:
         sf::Mouse mouse;
-        sf::Vector2f mousePos;
         sf::FloatRect area;
 
         unsigned short state;
@@ -30,7 +29,7 @@ namespace eng
         Clickable(std::string name, sf::Vector2f rect, sf::Vector2f pos);
         virtual ~Clickable();
 
-        void verifyClick();
+        void verifyClick(const sf::Vector2f &MousePos);
         void setOnClick(void (*onClick)());
     };
 }

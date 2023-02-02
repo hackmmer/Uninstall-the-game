@@ -7,7 +7,7 @@ eng::Label lbl3("Opciones", 17, 15, 17*3*1.4, f);
 eng::Label lbl4("Extra", 17, 15, 17*4*1.4, f);
 eng::Label lbl5("Salir", 17, 15, 17*5*1.4, f);
 
-GameState::GameState(sf::RenderWindow *window) : State(window)
+GameState::GameState(sf::RenderWindow *window, std::stack<State*> *states) : State(window, states)
 {
     f.loadFromFile("/home/blizz/Projects/Zeno-Survival-Project/Fonts/Lato-Light.ttf");
 }
