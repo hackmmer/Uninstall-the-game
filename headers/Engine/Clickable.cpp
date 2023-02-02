@@ -8,9 +8,9 @@ eng::Clickable::~Clickable()
 {
 }
 
-void eng::Clickable::verifyClick()
+void eng::Clickable::verifyClick(const sf::Vector2f &MousePos)
 {
-    if (this->area.contains(this->mousePos))
+    if (this->area.contains(MousePos))
     {
         this->state = eng::Clickable::HOVER;
         if (this->mouse.isButtonPressed(sf::Mouse::Left))
