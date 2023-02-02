@@ -11,6 +11,7 @@ protected:
     sf::RenderWindow *window;
     bool quit;
     std::stack<State *> *states;
+    bool pause;
 
 public:
     State(sf::RenderWindow *window, std::stack<State *> *states);
