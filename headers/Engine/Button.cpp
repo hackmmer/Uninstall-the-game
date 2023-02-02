@@ -1,11 +1,9 @@
 #include "Button.h"
 
 template <typename T>
-eng::Button<T>::Button(float x, float y, sf::Texture &normal, sf::Texture &hover, sf::Texture &pressed, const std::string &text, sf::Font font, sf::Color textColor, unsigned int textSize) : 
-Clickable("Button", 
-    normal.getSize(),
-    sf::Vector2f(x,y)
-)
+eng::Button<T>::Button(float x, float y, sf::Texture &normal, sf::Texture &hover, sf::Texture &pressed, const std::string &text, sf::Font font, sf::Color textColor, unsigned int textSize) : Clickable("Button",
+                                                                                                                                                                                                        normal.getSize(),
+                                                                                                                                                                                                        sf::Vector2f(x, y))
 {
     this->normal = normal;
     this->hover = hover;
@@ -55,12 +53,16 @@ void eng::Button<T>::draw(sf::RenderTarget *window)
 template <typename T>
 void eng::Button<T>::update(const float &dt)
 {
-    if (this->isHover())
+    switch (this->state)
     {
-        this->image.setTexture(this->hover);
-    }
-    else
-    {
+    case eng::Clickable::IDLE:
         this->image.setTexture(this->normal);
+        break;
+    case eng::Clickable::HOVER:
+        this->image.setTexture(this->hover);
+        break;
+    case eng::Clickable::PRESSED:
+        this->image.setTexture(this->pressed);
+        break;
     }
 }
