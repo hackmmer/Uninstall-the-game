@@ -5,12 +5,16 @@
 class GameState : public State
 {
     protected:
-         std::stack<State*> *states;
+        Player* player;
+        void initPlayer();
 
     public:
         GameState(sf::RenderWindow *window,  std::stack<State*> *states);
         virtual ~GameState();
 
+
+        /// @brief Here we load all the textures of the scene
+        void loadTextures();
         /// @brief Needed implementation of ``State``
         void endState();
         /// @brief Needed implementation of ``State``
