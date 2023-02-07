@@ -27,7 +27,7 @@ protected:
     int destreza;
     int vitalidad;
     int speed;
-    Afinity afinidades;
+    Afinity* afinidades;
 
 public:
     // need to add the other them
