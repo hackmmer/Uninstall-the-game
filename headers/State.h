@@ -1,13 +1,14 @@
 #ifndef STATE_H
 #define STATE_H
 
-#include <Engine/Engine.h>
+#include "Engine/Engine.h"
+#include "Player.h"
 
 class State
 {
 
 protected:
-    std::vector<sf::Texture> textures;
+    std::map<std::string, sf::Texture> textures;
     sf::RenderWindow *window;
     bool quit;
     std::stack<State *> *states;
@@ -16,6 +17,8 @@ protected:
 public:
     State(sf::RenderWindow *window, std::stack<State *> *states);
     virtual ~State();
+
+    
 
     /// @brief Verifies if the game is gonna quit
     void checkQuit();
@@ -31,7 +34,12 @@ public:
     /// @param dt Delta Time
     virtual void update(const float &dt) = 0;
 
+    /// @brief The render state
+    /// @param target the Window target
     virtual void render(sf::RenderTarget *target = nullptr) = 0;
+
+    /// @brief Load all the textures of the scene
+    virtual void loadTextures() = 0;
 };
 
 #endif
