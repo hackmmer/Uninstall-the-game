@@ -17,8 +17,9 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
 file(GLOB SOURCE
     "${CMAKE_SOURCE_DIR}/src/*"
     "${CMAKE_SOURCE_DIR}/headers/*"
-    "${CMAKE_SOURCE_DIR}/headers/*/*"
+    "${CMAKE_SOURCE_DIR}/headers/Engine/*"
     "${CMAKE_SOURCE_DIR}/States/*")
+    
 
 include_directories(headers/ States/)
 add_executable(ZSP src/main.cpp ${SOURCE})
