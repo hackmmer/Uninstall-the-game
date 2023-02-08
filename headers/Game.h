@@ -1,8 +1,8 @@
 #ifndef __GAME_H
 #define __GAME_H
 
-#include <GameState.h>
-#include <Engine/Engine.h> // Engine Stuff
+#include "GameState.h"
+#include "Engine/Engine.h" // Engine Stuff
 
 class Game{
     private:
