@@ -70,3 +70,5 @@ Actualiza los estados del botón y llama la funcion de click.
 `void draw(sf::RenderTarget *window)`<br>
 **window**: Ventana donde se renderiza el botón.<br>
 Dibuja el botón en la ventana.
+
+`void setOnClick(void (*onClick)())`
