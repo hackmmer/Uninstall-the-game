@@ -16,7 +16,7 @@ void eng::Clickable::verifyClick(const sf::Vector2f &MousePos)
         if (this->mouse.isButtonPressed(sf::Mouse::Left))
         {
             this->state = eng::Clickable::PRESSED;
-            this->onClick();
+            this->onClick(this);
         }
     }
     else
@@ -25,7 +25,7 @@ void eng::Clickable::verifyClick(const sf::Vector2f &MousePos)
     }
 }
 
-void eng::Clickable::setOnClick(void (*onClick)())
+void eng::Clickable::setOnClick(void (*onClick)(Clickable *self))
 {
     this->onClick = onClick;
 }

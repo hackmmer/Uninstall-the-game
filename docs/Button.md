@@ -2,19 +2,21 @@
 
 ## Descripción
 
-Crea un objeto de tipo Button para el interfaz. 
+> Crea un objeto de tipo Button para el interfaz. Extiende de [Clickable](Clickable.md)
 
 ## Index
 
-* Button
-* Clickable
+* **Button**
+* [Clickable](Clickable.md)
 * [Engine](Engine.md)
-* Entity
-* Label
-* Object
-* ProgressBar
+* [Entity](Entity.md)
+* [Label](Label.md)
+* [Object](Object.md)
+* [ProgressBar](ProgressBar.md)
 
 ## Usage
+
+> Esta clase aun no esta testeada
 
 ### Constructors and destructors
 
@@ -48,8 +50,8 @@ T &getTag()
 ```
 
 **tag**: El tag que usarás en el botón.<br>
-_Devuelve el objeto almacenado en la variable `tag` del Botón._
-Ajusta o devuelve el valor de `tag`.
+> _Devuelve el objeto almacenado en la variable `tag` del Botón._
+> Ajusta o devuelve el valor de `tag`.
 
 ```
 void setTexture(unsigned int stage, sf::Texture& texture)
@@ -58,19 +60,18 @@ sf::Texture& getTexture(unsigned int stage)
 
 **stage**: Entero que hace referencia al estado del boton (IDLE, HOVER, PRESSED).<br>
 **texture**: Textura del botón.<br>
-_Devuelve la textura del estado `stage` del botón._<br>
-_Ajusta o devuelve la textura del boton en un estado específico._
+> _Devuelve la textura del estado `stage` del botón._
+> _Ajusta o devuelve la textura del boton en un estado específico._
 
 #### Otros
 
 `void update(const float &dt)`<br>
 **dt**: Tiempo en delta.<br>
-Actualiza los estados del botón y llama la funcion de click.
+> Actualiza los estados del botón y llama la funcion de click.
 
 `void draw(sf::RenderTarget *window)`<br>
 **window**: Ventana donde se renderiza el botón.<br>
-Dibuja el botón en la ventana.
+> Dibuja el botón en la ventana.
 
-`void setOnClick(void (*onClick)())`<br>
-**onClick**: Puntero a funcion para ejecutar cuando se haga click.<br>
-Ajusta el valor del parametro `onClick`. (ver [Clickable->onClick](Clickable.md#parámetros))
+`void setOnClick(void (*onClick)(Clickable* self))`<br>
+> Ajusta el valor del parametro `onClick`. (ver [Clickable->onClick](Clickable.md#métodos))

@@ -39,8 +39,11 @@ eng::Entity::Entity() : Object("Entity")
 
 eng::Entity::Entity(std::string name) : Object(name)
 {
+    this->speed = 100.f;
 }
 
 eng::Entity::~Entity()
 {
+    delete this->sprite;
+    delete this->EntityTexture;
 }
