@@ -20,13 +20,13 @@ Crea un objeto de tipo Button para el interfaz.
 
 `Button(float x, float y, sf::Texture &normal, const std::string text, sf::Font font, sf::Color textColor, unsigned int textSize)`
 
-* x: Posicion en X del botón
-* y: Posicion en Y del botón
-* normal: Textura normal del botón (Sin estados, esta se aplica a todos los estados del boton, hay q cambiarlos despues usando `setXXX` donde XXX se sustituye por el estado (Normal, Hover, Pressed))
-* text: El texto que contendrá el botón
-* font: La fuente a usar por el texto en el botón
-* textColor: El color que usará el texto en el botón 
-* textSize: El tamaño del texto
+* **x**: Posicion en X del botón
+* **y**: Posicion en Y del botón
+* **normal**: Textura normal del botón (Sin estados, esta se aplica a todos los estados del boton, hay q cambiarlos despues usando `setXXX` donde XXX se sustituye por el estado (Normal, Hover, Pressed))
+* **text**: El texto que contendrá el botón
+* **font**: La fuente a usar por el texto en el botón
+* **textColor**: El color que usará el texto en el botón 
+* **textSize**: El tamaño del texto
 
 ### Parámetros
 
@@ -42,33 +42,25 @@ Crea un objeto de tipo Button para el interfaz.
 
 #### Getters/Setters
 
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃      `void setTag(T &tag)`                         ┃
-┃      `T &getTag()`                                        ┃
-┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-┣━━▶▶ tag: El tag que usarás en el botón.
-┣━━◀◀ Devuelve el objeto almacenado en la variable `tag` del Botón.
-┗━━━━▶ Ajusta o devuelve el valor de `tag`.
+`void setTag(T &tag)`
+`T &getTag()`
+**tag**: El tag que usarás en el botón.
+_Devuelve el objeto almacenado en la variable `tag` del Botón._
+Ajusta o devuelve el valor de `tag`.
 
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃      `void setTexture(unsigned int stage, sf::Texture& texture)`   ┃
-┃      `sf::Texture& getTexture(unsigned int stage)`                             ┃
-┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-┣━━▶▶ stage: Entero que hace referencia al estado del boton (IDLE, HOVER, PRESSED).
-┣━━▶▶ texture: Textura del botón.
-┣━━◀◀ Devuelve la textura del estado `stage` del botón.
-┗━━━━▶Ajusta o devuelve la textura del boton en un estado específico.
+`void setTexture(unsigned int stage, sf::Texture& texture)`
+`sf::Texture& getTexture(unsigned int stage)`
+**stage**: Entero que hace referencia al estado del boton (IDLE, HOVER, PRESSED).
+**texture**: Textura del botón.
+_Devuelve la textura del estado `stage` del botón._
+_Ajusta o devuelve la textura del boton en un estado específico._
 
 #### Otros
 
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃`void update(const float &dt)`              ┃
-┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-┣━━▶▶ dt: Tiempo en delta.
-┗━━━━▶ Actualiza los estados del botón y llama la funcion de click.
+`void update(const float &dt)`
+**dt**: Tiempo en delta.
+Actualiza los estados del botón y llama la funcion de click.
 
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃`void draw(sf::RenderTarget *window)` ┃
-┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-┣━━▶▶ window: Ventana donde se renderiza el botón.
-┗━━━━▶ Dibuja el botón en la ventana.
+`void draw(sf::RenderTarget *window)`
+**window**: Ventana donde se renderiza el botón.
+Dibuja el botón en la ventana.
