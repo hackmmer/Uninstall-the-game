@@ -42,17 +42,23 @@ Crea un objeto de tipo Button para el interfaz.
 
 #### Getters/Setters
 
-`void setTag(T &tag)`<br>
-`T &getTag()`<br>
-**tag**: El tag que usarás en el botón.<br>
-_Devuelve el objeto almacenado en la variable `tag` del Botón._<br>
+```
+void setTag(T &tag)
+T &getTag()
+```
+
+**tag**: El tag que usarás en el botón.
+_Devuelve el objeto almacenado en la variable `tag` del Botón._
 Ajusta o devuelve el valor de `tag`.
 
-`void setTexture(unsigned int stage, sf::Texture& texture)`<br>
-`sf::Texture& getTexture(unsigned int stage)`<br>
-**stage**: Entero que hace referencia al estado del boton (IDLE, HOVER, PRESSED).<br>
-**texture**: Textura del botón.<br>
-_Devuelve la textura del estado `stage` del botón._<br>
+```
+void setTexture(unsigned int stage, sf::Texture& texture)
+sf::Texture& getTexture(unsigned int stage)
+```
+
+**stage**: Entero que hace referencia al estado del boton (IDLE, HOVER, PRESSED).
+**texture**: Textura del botón.
+_Devuelve la textura del estado `stage` del botón._
 _Ajusta o devuelve la textura del boton en un estado específico._
 
 #### Otros
