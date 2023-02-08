@@ -1,5 +1,5 @@
-#ifndef __STATE_H
-#define __STATE_H
+#ifndef _GAME_STATE_H
+#define _GAME_STATE_H
 #include "State.h"
 
 class GameState : public State
