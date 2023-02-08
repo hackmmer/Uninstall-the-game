@@ -48,8 +48,8 @@ Crea un objeto de tipo Button para el interfaz.
 _Devuelve el objeto almacenado en la variable `tag` del Botón._
 Ajusta o devuelve el valor de `tag`.
 
-`void setTexture(unsigned int stage, sf::Texture& texture)`
-`sf::Texture& getTexture(unsigned int stage)`
+`void setTexture(unsigned int stage, sf::Texture& texture)`<br>
+`sf::Texture& getTexture(unsigned int stage)`<br>
 **stage**: Entero que hace referencia al estado del boton (IDLE, HOVER, PRESSED).
 **texture**: Textura del botón.
 _Devuelve la textura del estado `stage` del botón._
