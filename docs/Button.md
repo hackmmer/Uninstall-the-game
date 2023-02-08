@@ -71,4 +71,6 @@ Actualiza los estados del botón y llama la funcion de click.
 **window**: Ventana donde se renderiza el botón.<br>
 Dibuja el botón en la ventana.
 
-`void setOnClick(void (*onClick)())`
+`void setOnClick(void (*onClick)())`<br>
+**onClick**: Puntero a funcion para ejecutar cuando se haga click.<br>
+Ajusta el valor del parametro `onClick`. (ver [Clickable->onClick](Clickable.md#parámetros))
