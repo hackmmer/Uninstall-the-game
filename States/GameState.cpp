@@ -8,11 +8,14 @@ GameState::GameState(sf::RenderWindow *window, std::stack<State *> *states) : St
 {
     this->loadTextures();
     this->initPlayer();
+    sf::Font tmp;
+    tmp.loadFromMemory(Fonts::Lato_Light_ttf, Fonts::Lato_Light_ttf_len);
+    this->Title = new eng::Label("Hello world", 32, 15, 15, tmp);
 }
 
 GameState::~GameState()
 {
-    delete this->player;
+    //delete this->player;
 }
 
 void GameState::loadTextures()
@@ -30,6 +33,7 @@ void GameState::update(const float &dt)
 {
     if (!this->pause)
     {
+        this->Title->update(dt);
     }
 }
 
@@ -37,4 +41,5 @@ void GameState::render(sf::RenderTarget *target)
 {
     if (!target)
         target = this->window;
+    this->Title->draw(target);
 }

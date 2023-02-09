@@ -7,6 +7,7 @@ class GameState : public State
     protected:
         Player* player;
         void initPlayer();
+        eng::Label* Title;
 
     public:
         GameState(sf::RenderWindow *window,  std::stack<State*> *states);

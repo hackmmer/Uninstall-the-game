@@ -1,9 +1,9 @@
 #ifndef _STATE_H
 #define _STATE_H
 
-#include "Assets/Fonts.hpp"
 #include "Engine/Engine.h"
 #include "Player.h"
+#include "Assets/Fonts.h"
 
 class State
 {
