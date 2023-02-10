@@ -27,8 +27,9 @@ eng::Button::Button(float x, float y, sf::Texture normal, const std::string strT
         this->image.getPosition().x + (this->image.getGlobalBounds().width / 2.f) - this->text->getGlobalBounds().width / 2.f,
         this->image.getPosition().y + (this->image.getGlobalBounds().height / 2.f) - this->text->getGlobalBounds().height
         );
-        
-        
+    
+    // Fix area.
+    this->area = new sf::FloatRect(this->image.getGlobalBounds());
     
 }
 
