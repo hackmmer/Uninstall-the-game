@@ -2,6 +2,7 @@
 
 void GameState::initPlayer()
 {
+    
 }
 
 GameState::GameState(sf::RenderWindow *window, std::stack<State *> *states) : State(window, states)
@@ -9,13 +10,14 @@ GameState::GameState(sf::RenderWindow *window, std::stack<State *> *states) : St
     this->loadTextures();
     this->initPlayer();
     sf::Font tmp;
-    tmp.loadFromMemory(Fonts::Lato_Light_ttf, Fonts::Lato_Light_ttf_len);
+    tmp.loadFromMemory(Assets::Fonts::Lato_Light_ttf, Assets::Fonts::Lato_Light_ttf_len);
     this->Title = new eng::Label("Hello world", 32, 15, 15, tmp);
 }
 
 GameState::~GameState()
 {
     //delete this->player;
+    delete this->Title;
 }
 
 void GameState::loadTextures()
