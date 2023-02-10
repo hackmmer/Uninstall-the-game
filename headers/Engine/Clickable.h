@@ -10,7 +10,7 @@ namespace eng
 
     protected:
         sf::Mouse mouse;
-        sf::FloatRect area;
+        sf::FloatRect* area;
 
         unsigned short state;
         void (*onClick)(Clickable *self);
@@ -26,7 +26,7 @@ namespace eng
         virtual void draw(sf::RenderTarget *window) = 0;
         virtual void update(const float &dt) = 0;
 
-        Clickable(std::string name, sf::Vector2f rect, sf::Vector2f pos);
+        Clickable(std::string name, sf::Vector2u rect, sf::Vector2f pos);
         virtual ~Clickable();
 
         void verifyClick(const sf::Vector2f &MousePos);

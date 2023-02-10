@@ -8,6 +8,7 @@ class GameState : public State
         Player* player;
         void initPlayer();
         eng::Label* Title;
+        eng::Button* btn;
 
     public:
         GameState(sf::RenderWindow *window,  std::stack<State*> *states);
