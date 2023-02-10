@@ -16,19 +16,26 @@ eng::Button::Button(float x, float y, sf::Texture normal, const std::string strT
 
     this->image.setPosition(x, y);
     this->image.setScale(sf::Vector2f(1, 1));
+    this->image.setTexture(this->currentTexture);
     this->text = new sf::Text();
     this->text->setString(strText);
-    this->text->setPosition(this->image.getPosition());
-    this->text->move(
-        this->image.getGlobalBounds().width / 2.f - this->text->getLocalBounds().width / 2.f,
-        this->image.getGlobalBounds().height / 2.f - this->text->getLocalBounds().height / 2.f);
     this->text->setFont(*this->font);
     this->text->setFillColor(textColor);
     this->text->setCharacterSize(textSize);
+
+    this->text->setPosition(
+        this->image.getPosition().x + (this->image.getGlobalBounds().width / 2.f) - this->text->getGlobalBounds().width / 2.f,
+        this->image.getPosition().y + (this->image.getGlobalBounds().height / 2.f) - this->text->getGlobalBounds().height
+        );
+        
+        
+    
 }
 
 eng::Button::~Button()
 {
+    delete this->font;
+    delete this->text;
 }
 
 /*

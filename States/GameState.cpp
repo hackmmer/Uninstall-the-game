@@ -16,7 +16,7 @@ GameState::GameState(sf::RenderWindow *window, std::stack<State *> *states) : St
     sf::Texture tmp2;
     tmp2.loadFromFile("/home/blizz/Projects/Zeno-Survival-Project/Textures/Buttons/TestingButton/idle.png");
 
-    this->btn = new eng::Button(45,80, tmp2, "Hola Mundo", tmp, sf::Color::White, 14U);
+    this->btn = new eng::Button(45,80, tmp2, "Hola Mundo", tmp, sf::Color::White, 18U);
     tmp2.loadFromFile("/home/blizz/Projects/Zeno-Survival-Project/Textures/Buttons/TestingButton/hover.png");
     this->btn->setTexture(eng::Button::states::HOVER, tmp2);
 }
@@ -25,6 +25,11 @@ GameState::~GameState()
 {
     //delete this->player;
     delete this->Title;
+}
+
+void GameState::btn1(eng::Button btn)
+{
+    std::cout<<"Button pressed";
 }
 
 void GameState::loadTextures()
