@@ -27,7 +27,7 @@ void eng::Clickable::verifyClick(const sf::Vector2f &MousePos)
     }
 }
 
-void eng::Clickable::setOnClick(void (*onClick)(Clickable *self))
+void eng::Clickable::setOnClick(std::function<void(Clickable*)> onClick)
 {
     this->onClick = onClick;
 }

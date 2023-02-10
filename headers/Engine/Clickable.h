@@ -13,7 +13,7 @@ namespace eng
         sf::FloatRect* area;
 
         unsigned short state;
-        void (*onClick)(Clickable *self);
+        std::function<void(Clickable*)> onClick;
 
     public:
         enum states
@@ -30,7 +30,7 @@ namespace eng
         virtual ~Clickable();
 
         void verifyClick(const sf::Vector2f &MousePos);
-        void setOnClick(void (*onClick)(Clickable* self));
+        void setOnClick(std::function<void(Clickable*)> onClick);
     };
 }
 #endif

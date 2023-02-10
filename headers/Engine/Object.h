@@ -14,6 +14,7 @@
 #include <stack>
 #include <fstream>
 #include <sstream>
+#include <functional>
 
 
 namespace eng
