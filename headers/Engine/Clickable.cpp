@@ -6,12 +6,25 @@ eng::Clickable<Child>::Clickable(std::string name, sf::Vector2u rect, sf::Vector
 {
     sf::Vector2f trueRect(rect.x, rect.y);
     this->area = new sf::FloatRect(trueRect, pos);
+    this->clickByPointer = false;
 }
 
 template <class Child>
 eng::Clickable<Child>::~Clickable()
 {
     delete this->area;
+}
+
+template <class Child>
+bool eng::Clickable<Child>::isPressed()
+{
+    return this->state == eng::Clickable<Child>::PRESSED;
+}
+
+template <class Child>
+void eng::Clickable<Child>::setClickByPressing(bool click)
+{
+    this->clickByPointer = click;
 }
 
 template <class Child>
@@ -23,7 +36,8 @@ void eng::Clickable<Child>::verifyClick(const sf::Vector2f &MousePos)
         if (this->mouse.isButtonPressed(sf::Mouse::Left))
         {
             this->state = eng::Clickable<Child>::PRESSED;
-            this->onClick(this->context);
+            if (this->clickByPointer)
+                this->onClick(this->context);
         }
     }
     else

@@ -19,6 +19,7 @@ namespace eng
         unsigned short state;
         std::function<void(Child*)> onClick;
         Child* context;
+        bool clickByPointer;
 
     public:
         enum states
@@ -33,6 +34,9 @@ namespace eng
     
         Clickable(std::string name, sf::Vector2u rect, sf::Vector2f pos);
         virtual ~Clickable();
+
+        bool isPressed();
+        void setClickByPressing(bool click);
 
         void verifyClick(const sf::Vector2f &MousePos);
         void setOnClick(std::function<void(Child*)> onClick, Child* context);
