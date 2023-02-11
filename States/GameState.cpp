@@ -5,11 +5,6 @@ void GameState::initPlayer()
     
 }
 
-void btn1(eng::Button* btn)
-{
-    std::cout<<"Helo from button"<<std::endl;
-}
-
 GameState::GameState(sf::RenderWindow *window, std::stack<State *> *states) : State(window, states)
 {
     this->loadTextures();
@@ -26,13 +21,18 @@ GameState::GameState(sf::RenderWindow *window, std::stack<State *> *states) : St
     this->btn->setTexture(eng::Button::states::HOVER, tmp2);
     tmp2.loadFromFile("/home/blizz/Projects/Zeno-Survival-Project/Textures/Buttons/TestingButton/pressed.png");
     this->btn->setTexture(eng::Button::states::PRESSED,tmp2);
-    this->btn->setOnClick(btn1, this->btn);
+    this->btn->setOnClick(this->btn1, this->btn);
 }
 
 GameState::~GameState()
 {
     //delete this->player;
     delete this->Title;
+}
+
+void GameState::btn1(eng::Button *btn)
+{
+
 }
 
 void GameState::loadTextures()

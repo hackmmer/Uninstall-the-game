@@ -9,6 +9,9 @@ namespace eng
     class Clickable : public Object
     {
 
+        private:
+        bool hasPressed;
+
     protected:
         sf::Mouse mouse;
         sf::FloatRect* area;

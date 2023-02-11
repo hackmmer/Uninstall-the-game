@@ -1,7 +1,7 @@
 #include "Clickable.h"
 #include "Button.h"
 
-template <class Child> 
+template <class Child>
 eng::Clickable<Child>::Clickable(std::string name, sf::Vector2u rect, sf::Vector2f pos) : Object(name)
 {
     sf::Vector2f trueRect(rect.x, rect.y);
@@ -23,10 +23,7 @@ void eng::Clickable<Child>::verifyClick(const sf::Vector2f &MousePos)
         if (this->mouse.isButtonPressed(sf::Mouse::Left))
         {
             this->state = eng::Clickable<Child>::PRESSED;
-            while(!this->mouse.isButtonPressed(sf::Mouse::Left))
-            {
             this->onClick(this->context);
-            }
         }
     }
     else
@@ -35,7 +32,7 @@ void eng::Clickable<Child>::verifyClick(const sf::Vector2f &MousePos)
     }
 }
 template <class Child>
-void eng::Clickable<Child>::setOnClick(std::function<void(Child*)> onClick, Child* context)
+void eng::Clickable<Child>::setOnClick(std::function<void(Child *)> onClick, Child *context)
 {
     this->onClick = onClick;
     this->context = context;

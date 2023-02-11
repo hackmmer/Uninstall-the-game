@@ -14,6 +14,9 @@ class GameState : public State
         GameState(sf::RenderWindow *window,  std::stack<State*> *states);
         virtual ~GameState();
 
+        static void btn1(eng::Button* btn);
+
+
         /// @brief Here we load all the textures of the scene
         void loadTextures();
         /// @brief Needed implementation of ``State``
