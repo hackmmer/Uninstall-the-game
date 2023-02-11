@@ -57,13 +57,13 @@ void eng::Button::setTexture(unsigned int stage, sf::Texture &texture)
     std::string state;
     switch (stage)
     {
-    case eng::Clickable::IDLE:
+    case eng::Clickable<Button>::IDLE:
         state = "NORMAL";
         break;
-    case eng::Clickable::HOVER:
+    case eng::Clickable<Button>::HOVER:
         state = "HOVER";
         break;
-    case eng::Clickable::PRESSED:
+    case eng::Clickable<Button>::PRESSED:
         state = "PRESSED";
         break;
     }
@@ -75,13 +75,13 @@ sf::Texture &eng::Button::getTexture(unsigned int stage)
 {
     switch (stage)
     {
-    case eng::Clickable::IDLE:
+    case eng::Clickable<Button>::IDLE:
         return this->textures["NORMAL"];
         break;
-    case eng::Clickable::HOVER:
+    case eng::Clickable<Button>::HOVER:
         return this->textures["HOVER"];
         break;
-    case eng::Clickable::PRESSED:
+    case eng::Clickable<Button>::PRESSED:
         return this->textures["PRESSED"];
         break;
     default:
@@ -104,6 +104,7 @@ void eng::Button::draw(sf::RenderTarget *target)
     }
 }
 
+
 void eng::Button::updateWindow(sf::RenderWindow *window)
 {
     this->window = window;
@@ -113,15 +114,15 @@ void eng::Button::update(const float &dt)
 {
     switch (this->state)
     {
-    case eng::Clickable::IDLE:
+    case eng::Clickable<Button>::IDLE:
         this->image.setTexture(this->textures["NORMAL"]);
         this->currentTexture = this->textures["NORMAL"];
         break;
-    case eng::Clickable::HOVER:
+    case eng::Clickable<Button>::HOVER:
         this->image.setTexture(this->textures["HOVER"]);
         this->currentTexture = this->textures["HOVER"];
         break;
-    case eng::Clickable::PRESSED:
+    case eng::Clickable<Button>::PRESSED:
         this->image.setTexture(this->textures["PRESSED"]);
         this->currentTexture = this->textures["PRESSED"];
         break;

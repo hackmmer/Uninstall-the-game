@@ -1,33 +1,41 @@
 #include "Clickable.h"
+#include "Button.h"
 
-eng::Clickable::Clickable(std::string name, sf::Vector2u rect, sf::Vector2f pos) : Object(name)
+template <class Child> 
+eng::Clickable<Child>::Clickable(std::string name, sf::Vector2u rect, sf::Vector2f pos) : Object(name)
 {
     sf::Vector2f trueRect(rect.x, rect.y);
     this->area = new sf::FloatRect(trueRect, pos);
 }
 
-eng::Clickable::~Clickable()
+template <class Child>
+eng::Clickable<Child>::~Clickable()
 {
+    delete this->area;
 }
 
-void eng::Clickable::verifyClick(const sf::Vector2f &MousePos)
+template <class Child>
+void eng::Clickable<Child>::verifyClick(const sf::Vector2f &MousePos)
 {
     if (this->area->contains(MousePos))
     {
-        this->state = eng::Clickable::HOVER;
+        this->state = eng::Clickable<Child>::HOVER;
         if (this->mouse.isButtonPressed(sf::Mouse::Left))
         {
-            this->state = eng::Clickable::PRESSED;
-            this->onClick(this);
+            this->state = eng::Clickable<Child>::PRESSED;
+            this->onClick(this->context);
         }
     }
     else
     {
-        this->state = eng::Clickable::IDLE;
+        this->state = eng::Clickable<Child>::IDLE;
     }
 }
-
-void eng::Clickable::setOnClick(std::function<void(Clickable*)> onClick)
+template <class Child>
+void eng::Clickable<Child>::setOnClick(std::function<void(Child*)> onClick, Child* context)
 {
     this->onClick = onClick;
+    this->context = context;
 }
+
+template class eng::Clickable<eng::Button>;

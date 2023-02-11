@@ -6,7 +6,7 @@
 namespace eng
 {
 
-    class Button : public Clickable
+    class Button : public Clickable<Button>
     {
     protected:
         sf::Sprite image;
@@ -32,6 +32,7 @@ namespace eng
 
         void update(const float &dt);
         void draw(sf::RenderTarget *window);
+
     };
 
 }

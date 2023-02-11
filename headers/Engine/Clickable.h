@@ -5,6 +5,7 @@
 
 namespace eng
 {
+    template <class Child>
     class Clickable : public Object
     {
 
@@ -13,7 +14,8 @@ namespace eng
         sf::FloatRect* area;
 
         unsigned short state;
-        std::function<void(Clickable*)> onClick;
+        std::function<void(Child*)> onClick;
+        Child* context;
 
     public:
         enum states
@@ -25,12 +27,12 @@ namespace eng
 
         virtual void draw(sf::RenderTarget *window) = 0;
         virtual void update(const float &dt) = 0;
-
+    
         Clickable(std::string name, sf::Vector2u rect, sf::Vector2f pos);
         virtual ~Clickable();
 
         void verifyClick(const sf::Vector2f &MousePos);
-        void setOnClick(std::function<void(Clickable*)> onClick);
+        void setOnClick(std::function<void(Child*)> onClick, Child* context);
     };
 }
 #endif
