@@ -23,7 +23,10 @@ void eng::Clickable<Child>::verifyClick(const sf::Vector2f &MousePos)
         if (this->mouse.isButtonPressed(sf::Mouse::Left))
         {
             this->state = eng::Clickable<Child>::PRESSED;
+            while(!this->mouse.isButtonPressed(sf::Mouse::Left))
+            {
             this->onClick(this->context);
+            }
         }
     }
     else

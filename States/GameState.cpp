@@ -24,6 +24,8 @@ GameState::GameState(sf::RenderWindow *window, std::stack<State *> *states) : St
     this->btn = new eng::Button(45,80, tmp2, "Hola Mundo", tmp, sf::Color::White, 18U);
     tmp2.loadFromFile("/home/blizz/Projects/Zeno-Survival-Project/Textures/Buttons/TestingButton/hover.png");
     this->btn->setTexture(eng::Button::states::HOVER, tmp2);
+    tmp2.loadFromFile("/home/blizz/Projects/Zeno-Survival-Project/Textures/Buttons/TestingButton/pressed.png");
+    this->btn->setTexture(eng::Button::states::PRESSED,tmp2);
     this->btn->setOnClick(btn1, this->btn);
 }
 
