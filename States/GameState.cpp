@@ -16,11 +16,11 @@ GameState::GameState(sf::RenderWindow *window, std::stack<State *> *states) : St
     sf::Texture tmp2;
     tmp2.loadFromFile("/home/blizz/Projects/Zeno-Survival-Project/Textures/Buttons/TestingButton/idle.png");
 
-    this->btn = new eng::Button(45,80, tmp2, "Hola Mundo", tmp, sf::Color::White, 18U);
+    this->btns["HELLO_BUTTON"] = new eng::Button(45,80, tmp2, "Hola Mundo", tmp, sf::Color::White, 18U);
     tmp2.loadFromFile("/home/blizz/Projects/Zeno-Survival-Project/Textures/Buttons/TestingButton/hover.png");
-    this->btn->setTexture(eng::Button::states::HOVER, tmp2);
+    this->btns["HELLO_BUTTON"]->setTexture(eng::Button::states::HOVER, tmp2);
     tmp2.loadFromFile("/home/blizz/Projects/Zeno-Survival-Project/Textures/Buttons/TestingButton/pressed.png");
-    this->btn->setTexture(eng::Button::states::PRESSED,tmp2);
+    this->btns["HELLO_BUTTON"]->setTexture(eng::Button::states::PRESSED,tmp2);
 
 }
 
@@ -32,7 +32,7 @@ GameState::~GameState()
 
 void GameState::btn1()
 {
-    std::cout<<"hello from inside"<<std::endl;
+    this->Title->text = "Hello from fucking button :VVV";
 }
 
 void GameState::loadTextures()
@@ -51,12 +51,9 @@ void GameState::update(const float &dt)
     if (!this->pause)
     {
         this->Title->update(dt);
-        this->btn->update(dt);
-        if(this->btn->isPressed())
-        {
-            std::cout<<"Hello form button!!"<<std::endl;
+        this->btns["HELLO_BUTTON"]->update(dt);
+        if(this->btns["HELLO_BUTTON"]->isPressed())
             this->btn1();
-        }
     }
 }
 
@@ -65,6 +62,6 @@ void GameState::render(sf::RenderTarget *target)
     if (!target)
         target = this->window;
     this->Title->draw(target);
-    this->btn->updateWindow(this->window);
-    this->btn->draw(target);
+    this->btns["HELLO_BUTTON"]->updateWindow(this->window);
+    this->btns["HELLO_BUTTON"]->draw(target);
 }
