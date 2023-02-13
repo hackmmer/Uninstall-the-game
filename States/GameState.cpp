@@ -28,6 +28,12 @@ GameState::~GameState()
 {
     //delete this->player;
     delete this->Title;
+    for (auto it = this->btns.begin(); it != this->btns.end(); ++it)
+    {
+        std::cout << "Cleanning \"" << it->first << "\""<< std::endl;
+        delete it->second;
+    }
+    
 }
 
 void GameState::btn1()
