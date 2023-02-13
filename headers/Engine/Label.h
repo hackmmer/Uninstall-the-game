@@ -5,7 +5,7 @@
 
 namespace eng
 {
-    class Label : public Object
+    class Label : public Object<const float &>
     {
     protected:
         sf::Text self;

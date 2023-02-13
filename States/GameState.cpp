@@ -60,10 +60,11 @@ void GameState::endState()
 
 void GameState::update(const float &dt)
 {
+    this->updateMouse();
     if (!this->pause)
     {
         this->Title->update(dt);
-        this->btns["HELLO_BUTTON"]->update(dt);
+        this->btns["HELLO_BUTTON"]->update(this->MousePos);
         if(this->btns["HELLO_BUTTON"]->isPressed())
             this->btn1();
         endStateUpdate();

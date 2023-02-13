@@ -1,11 +1,11 @@
 #include "Object.h"
-/* 
+/*
 std::ostream &eng::operator<<(std::ostream &out, eng::Object o)
 {
     // TODO: insert return statement here
     out << "[" << &o << " Object " << o.name << " " << o.getChildsCount() << "]";
     return out;
-} 
+}
 
 void eng::Object::addChild(Object child, int pos)
 {
@@ -17,20 +17,25 @@ void eng::Object::addChild(Object child, int pos)
         this->childs.insert(this->childs.end() + (pos * -1), child);
 }
  */
-eng::Object::Object()
+template <typename T>
+eng::Object<T>::Object()
 {
     this->name = "Object";
 }
-
-eng::Object::Object(std::string name)
+template <typename T>
+eng::Object<T>::Object(std::string name)
 {
-    //this->childs.clear();
+    // this->childs.clear();
     this->name = name;
 }
-
-eng::Object::~Object()
+template <typename T>
+eng::Object<T>::~Object()
 {
 }
+
+template class eng::Object<sf::Vector2f &>;
+template class eng::Object<const float &>;
+
 /*
 eng::Object &eng::Object::getChild(int pos)
 {

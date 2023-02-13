@@ -14,14 +14,16 @@ protected:
     bool quit;
     std::stack<State *> *states;
     bool pause;
+    sf::Mouse mouse;
+    sf::Vector2f MousePos;
 
 public:
     State(sf::RenderWindow *window, std::stack<State *> *states);
     virtual ~State();
 
-    
+    virtual void updateMouse();
 
-    /// @brief Verifies if the game is gonna quit
+    /// @brief Updates if the game is gonna quit
     virtual void endStateUpdate() = 0;
 
     /// @brief Verifies if quit?

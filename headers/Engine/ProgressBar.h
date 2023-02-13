@@ -6,7 +6,7 @@
 namespace eng
 {
 
-    class ProgressBar : public Object
+    class ProgressBar : public Object<const float &>
     {
     protected:
         sf::Sprite sfMarco;

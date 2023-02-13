@@ -5,7 +5,7 @@
 
 namespace eng
 {
-    class Entity : public Object
+    class Entity : public Object<const float &>
     {
     protected:
         sf::Sprite *sprite;

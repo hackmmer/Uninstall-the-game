@@ -4,28 +4,27 @@
 
 class GameState : public State
 {
-    protected:
-        Player* player;
-        void initPlayer();
-        eng::Label* Title;
-        std::map<std::string, eng::Button*> btns;
+protected:
+    Player *player;
+    void initPlayer();
+    eng::Label *Title;
+    std::map<std::string, eng::Button *> btns;
 
-    public:
-        GameState(sf::RenderWindow *window,  std::stack<State*> *states);
-        virtual ~GameState();
+public:
+    GameState(sf::RenderWindow *window, std::stack<State *> *states);
+    virtual ~GameState();
 
-        void btn1();
+    void btn1();
 
-        void endStateUpdate();
+    void endStateUpdate();
 
-
-        /// @brief Here we load all the textures of the scene
-        void loadTextures();
-        /// @brief Needed implementation of ``State``
-        void endState();
-        /// @brief Needed implementation of ``State``
-        void update(const float& dt);
-        /// @brief Needed implementation of ``State``
-        void render(sf::RenderTarget* target);
+    /// @brief Here we load all the textures of the scene
+    void loadTextures();
+    /// @brief Needed implementation of ``State``
+    void endState();
+    /// @brief Needed implementation of ``State``
+    void update(const float &dt);
+    /// @brief Needed implementation of ``State``
+    void render(sf::RenderTarget *target);
 };
 #endif

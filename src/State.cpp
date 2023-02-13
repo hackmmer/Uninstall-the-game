@@ -11,6 +11,10 @@ State::~State()
 {
 }
 
+void State::updateMouse()
+{
+    this->MousePos = this->window->mapPixelToCoords(this->mouse.getPosition(*this->window));
+}
 
 const bool State::getQuit() const
 {

@@ -6,19 +6,19 @@
 namespace eng
 {
     template <class Child>
-    class Clickable : public Object
+    class Clickable : public Object<sf::Vector2f &>
     {
 
-        private:
+    private:
         bool hasPressed;
 
     protected:
         sf::Mouse mouse;
-        sf::FloatRect* area;
+        sf::FloatRect *area;
 
         unsigned short state;
-        std::function<void(Child*)> onClick;
-        Child* context;
+        std::function<void(Child *)> onClick;
+        Child *context;
         bool clickByPointer;
 
     public:
@@ -30,8 +30,8 @@ namespace eng
         };
 
         virtual void draw(sf::RenderTarget *window) = 0;
-        virtual void update(const float &dt) = 0;
-    
+        virtual void update(sf::Vector2f &mousePos) = 0;
+
         Clickable(std::string name, sf::Vector2u rect, sf::Vector2f pos);
         virtual ~Clickable();
 
@@ -39,7 +39,7 @@ namespace eng
         void setClickByPressing(bool click);
 
         void verifyClick(const sf::Vector2f &MousePos);
-        void setOnClick(std::function<void(Child*)> onClick, Child* context);
+        void setOnClick(std::function<void(Child *)> onClick, Child *context);
     };
 }
 #endif

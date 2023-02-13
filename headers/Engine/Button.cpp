@@ -1,6 +1,5 @@
 #include "Button.h"
 
-
 eng::Button::Button(float x, float y, sf::Texture normal, const std::string strText, sf::Font font, sf::Color textColor, unsigned int textSize)
     : Clickable("Button",
                 normal.getSize(),
@@ -25,12 +24,10 @@ eng::Button::Button(float x, float y, sf::Texture normal, const std::string strT
 
     this->text->setPosition(
         this->image.getPosition().x + (this->image.getGlobalBounds().width / 2.f) - this->text->getGlobalBounds().width / 2.f,
-        this->image.getPosition().y + (this->image.getGlobalBounds().height / 2.f) - this->text->getGlobalBounds().height
-        );
-    
+        this->image.getPosition().y + (this->image.getGlobalBounds().height / 2.f) - this->text->getGlobalBounds().height);
+
     // Fix area.
     this->area = new sf::FloatRect(this->image.getGlobalBounds());
-    
 }
 
 eng::Button::~Button()
@@ -51,7 +48,6 @@ T &eng::Button::getTag()
     return this->tag;
 }*/
 
-
 void eng::Button::setTexture(unsigned int stage, sf::Texture &texture)
 {
     std::string state;
@@ -69,7 +65,6 @@ void eng::Button::setTexture(unsigned int stage, sf::Texture &texture)
     }
     this->textures[state] = texture;
 }
-
 
 sf::Texture &eng::Button::getTexture(unsigned int stage)
 {
@@ -90,28 +85,26 @@ sf::Texture &eng::Button::getTexture(unsigned int stage)
     }
 }
 
-
 void eng::Button::draw(sf::RenderTarget *target)
 {
     if (this->visible)
     {
-        verifyClick(window->mapPixelToCoords(this->mouse.getPosition(*this->window)));
         this->image.setTexture(this->currentTexture);
         target->draw(this->image);
-        if(!this->text)
+        if (!this->text)
             throw "EXCEPTION";
         target->draw(*this->text);
     }
 }
-
 
 void eng::Button::updateWindow(sf::RenderWindow *window)
 {
     this->window = window;
 }
 
-void eng::Button::update(const float &dt)
+void eng::Button::update(sf::Vector2f &MousePos)
 {
+    verifyClick(MousePos);
     switch (this->state)
     {
     case eng::Clickable<Button>::IDLE:

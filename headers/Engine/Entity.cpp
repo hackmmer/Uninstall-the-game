@@ -33,7 +33,7 @@ void eng::Entity::setPosition(const float x, const float y)
         this->sprite->setPosition(x, y);
 }
 
-eng::Entity::Entity() : Object("Entity")
+eng::Entity::Entity() : Object<const float &>("Entity")
 {
     // Need the sprite configuration
     this->speed = 100.f;

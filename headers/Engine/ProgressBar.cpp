@@ -1,6 +1,6 @@
 #include "ProgressBar.h"
 
-eng::ProgressBar::ProgressBar(float min, float max, float x, float y, sf::Color barColor, std::string marco, std::string bg, std::string font)
+eng::ProgressBar::ProgressBar(float min, float max, float x, float y, sf::Color barColor, std::string marco, std::string bg, std::string font) : Object<const float &>("Progress Bar")
 {
     this->min = min;
     this->value = min;
@@ -13,7 +13,7 @@ eng::ProgressBar::ProgressBar(float min, float max, float x, float y, sf::Color 
     fFont.loadFromFile(font);
 
     this->sfMarco.setTexture(textMarco);
-    
+
     this->sfFiller.setPosition(x, y);
     this->sfMarco.setPosition(x, y);
     this->sfFiller.setSize(sf::Vector2f(
