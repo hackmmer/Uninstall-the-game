@@ -2,7 +2,7 @@
 
 void Player::initializeVariables()
 {
-    Afinity* afinity = new Afinity();
+    Afinity *afinity = new Afinity();
     afinity->agua = 0;
     afinity->aire = 0;
     afinity->fuego = 0;
@@ -65,6 +65,7 @@ void Player::initializeVariables()
         afinity->luz = 3;
         break;
     }
+    this->speed *= 100;
     this->afinidades = afinity;
 }
 

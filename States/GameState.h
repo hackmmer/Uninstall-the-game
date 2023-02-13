@@ -16,6 +16,8 @@ class GameState : public State
 
         void btn1();
 
+        void endStateUpdate();
+
 
         /// @brief Here we load all the textures of the scene
         void loadTextures();

@@ -41,6 +41,12 @@ void GameState::btn1()
     this->Title->text = "Hello from fucking button :VVV";
 }
 
+void GameState::endStateUpdate()
+{
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+        this->endState();
+}
+
 void GameState::loadTextures()
 {
     // this->textures["PLAYER_IDLE"].loadFromXXX and we save it like this...
@@ -60,6 +66,7 @@ void GameState::update(const float &dt)
         this->btns["HELLO_BUTTON"]->update(dt);
         if(this->btns["HELLO_BUTTON"]->isPressed())
             this->btn1();
+        endStateUpdate();
     }
 }
 

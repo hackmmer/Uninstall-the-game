@@ -102,7 +102,6 @@ void Game::update()
     if(!this->states.empty())
     {
         this->states.top()->update(this->dt);
-        this->states.top()->checkQuit();
         if(this->states.top()->getQuit())
         {
             this->states.top()->endState();

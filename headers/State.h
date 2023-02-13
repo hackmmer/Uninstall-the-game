@@ -22,14 +22,14 @@ public:
     
 
     /// @brief Verifies if the game is gonna quit
-    void checkQuit();
+    virtual void endStateUpdate() = 0;
 
     /// @brief Verifies if quit?
     /// @return the Quit value
     const bool getQuit() const;
 
     /// @brief Called when a state is gonna quit (Like a State Destructor)
-    virtual void endState() = 0;
+    void endState();
 
     /// @brief This called every frame
     /// @param dt Delta Time

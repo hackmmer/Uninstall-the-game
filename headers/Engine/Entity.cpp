@@ -16,7 +16,8 @@ void eng::Entity::draw(sf::RenderTarget *target)
 
     if (this->visible)
     {
-        target->draw(*this->sprite);
+        if (this->sprite)
+            target->draw(*this->sprite);
     }
 }
 
@@ -28,7 +29,8 @@ void eng::Entity::loadSprite(sf::Texture *texture)
 
 void eng::Entity::setPosition(const float x, const float y)
 {
-    this->sprite->setPosition(x, y);
+    if (this->sprite)
+        this->sprite->setPosition(x, y);
 }
 
 eng::Entity::Entity() : Object("Entity")
@@ -39,11 +41,12 @@ eng::Entity::Entity() : Object("Entity")
 
 eng::Entity::Entity(std::string name) : Object(name)
 {
+    this->sprite = nullptr;
+    this->EntityTexture = nullptr;
     this->speed = 100.f;
 }
 
 eng::Entity::~Entity()
 {
     delete this->sprite;
-    delete this->EntityTexture;
 }
