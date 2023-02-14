@@ -16,6 +16,7 @@ protected:
     bool pause;
     sf::Mouse mouse;
     sf::Vector2f MousePos;
+    bool showDebug;
 
 public:
     State(sf::RenderWindow *window, std::stack<State *> *states);
@@ -43,6 +44,8 @@ public:
 
     /// @brief Load all the textures of the scene
     virtual void loadTextures() = 0;
+
+    virtual void showDebugOptions();
 };
 
 #endif

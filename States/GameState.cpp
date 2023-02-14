@@ -60,9 +60,10 @@ void GameState::endState()
 
 void GameState::update(const float &dt)
 {
-    this->updateMouse();
     if (!this->pause)
     {
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::F5))
+            this->showDebug = true;
         this->Title->update(dt);
         this->btns["HELLO_BUTTON"]->update(this->MousePos);
         if(this->btns["HELLO_BUTTON"]->isPressed())
@@ -78,4 +79,5 @@ void GameState::render(sf::RenderTarget *target)
     this->Title->draw(target);
     this->btns["HELLO_BUTTON"]->updateWindow(this->window);
     this->btns["HELLO_BUTTON"]->draw(target);
+    this->showDebugOptions();
 }

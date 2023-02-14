@@ -101,6 +101,7 @@ void Game::update()
 
     if(!this->states.empty())
     {
+        this->states.top()->updateMouse();
         this->states.top()->update(this->dt);
         if(this->states.top()->getQuit())
         {
