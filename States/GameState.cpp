@@ -5,6 +5,12 @@ void GameState::initPlayer()
     
 }
 
+
+void t1(eng::Button* b)
+{
+    std::cout<<"From pointer"<<std::endl;
+}
+
 GameState::GameState(sf::RenderWindow *window, std::stack<State *> *states) : State(window, states)
 {
     this->loadTextures();
@@ -21,6 +27,8 @@ GameState::GameState(sf::RenderWindow *window, std::stack<State *> *states) : St
     this->btns["HELLO_BUTTON"]->setTexture(eng::Button::states::HOVER, tmp2);
     tmp2.loadFromFile("/home/blizz/Projects/Zeno-Survival-Project/Textures/Buttons/TestingButton/pressed.png");
     this->btns["HELLO_BUTTON"]->setTexture(eng::Button::states::PRESSED,tmp2);
+    //this->btns["HELLO_BUTTON"]->setOnClick(t1, this->btns["HELLO_BUTTON"]);
+    //this->btns["HELLO_BUTTON"]->setClickByPressing(true);
 
 }
 
@@ -39,7 +47,9 @@ GameState::~GameState()
 void GameState::btn1()
 {
     this->Title->text = "Hello from fucking button :VVV";
+    std::cout<<"From update"<<std::endl;
 }
+
 
 void GameState::endStateUpdate()
 {
@@ -62,11 +72,17 @@ void GameState::update(const float &dt)
 {
     if (!this->pause)
     {
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::F5))
-            this->showDebug = true;
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::F5) && !this->f5)
+        {
+            this->showDebug = !this->showDebug;
+            this->f5 = true;
+        }
+        else if(!sf::Keyboard::isKeyPressed(sf::Keyboard::F5))
+            this->f5 = false;
+
         this->Title->update(dt);
         this->btns["HELLO_BUTTON"]->update(this->MousePos);
-        if(this->btns["HELLO_BUTTON"]->isPressed())
+        if(this->btns["HELLO_BUTTON"]->isJustPressed())
             this->btn1();
         endStateUpdate();
     }

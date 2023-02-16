@@ -9,6 +9,7 @@ protected:
     void initPlayer();
     eng::Label *Title;
     std::map<std::string, eng::Button *> btns;
+    bool f5;
 
 public:
     GameState(sf::RenderWindow *window, std::stack<State *> *states);

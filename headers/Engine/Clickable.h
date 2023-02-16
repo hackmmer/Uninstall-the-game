@@ -21,6 +21,10 @@ namespace eng
         Child *context;
         bool clickByPointer;
 
+        bool clicked;
+        bool justClicked;
+        bool mIn; // Mouse Inside
+
     public:
         enum states
         {
@@ -36,6 +40,7 @@ namespace eng
         virtual ~Clickable();
 
         bool isPressed();
+        bool isJustPressed();
         void setClickByPressing(bool click);
 
         void verifyClick(const sf::Vector2f &MousePos);
