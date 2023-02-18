@@ -7,7 +7,7 @@ void GameState::initPlayer()
 
 GameState::GameState(sf::RenderWindow *window, std::stack<State *> *states) : State(window, states)
 {
-    this->loadTextures();
+    this->loadRes();
     this->initPlayer();
 
 }
@@ -23,7 +23,7 @@ void GameState::endStateUpdate()
         this->endState();
 }
 
-void GameState::loadTextures()
+void GameState::loadRes()
 {
     // this->textures["PLAYER_IDLE"].loadFromXXX and we save it like this...
 }

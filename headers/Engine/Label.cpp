@@ -1,5 +1,9 @@
 #include "Label.h"
 
+eng::Label::Label() : Object<const float &>("Label")
+{
+}
+
 eng::Label::Label(std::string text, const uint &size, const float &x, const float &y, sf::Font font) : Object<const float &>("Label"), text(text), size(size), x(x), y(y), font(font)
 {
 }

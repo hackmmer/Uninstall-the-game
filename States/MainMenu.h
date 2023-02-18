@@ -5,14 +5,16 @@
 
 class MainMenuState : public State
 {
+    protected:
+        eng::Label Title;
     public:
         MainMenuState(sf::RenderWindow *window, std::stack<State *> *states);
         virtual ~MainMenuState();
 
+        void loadRes();
+        void endStateUpdate();
         void update(const float& dt);
         void render(sf::RenderTarget *window);
-        void loadTextures();
-        void endStateUpdate();
 
 };
 

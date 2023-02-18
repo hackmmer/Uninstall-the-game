@@ -18,7 +18,7 @@ public:
     void endStateUpdate();
 
     /// @brief Here we load all the textures of the scene
-    void loadTextures();
+    void loadRes();
     /// @brief Needed implementation of ``State``
     void endState();
     /// @brief Needed implementation of ``State``

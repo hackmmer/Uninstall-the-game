@@ -2,6 +2,7 @@
 #define __GAME_H
 
 #include "GameState.h"
+#include "MainMenu.h"
 #include "Engine/Engine.h" // Engine Stuff
 
 class Game{

@@ -10,6 +10,7 @@ class State
 
 protected:
     std::map<std::string, sf::Texture> textures;
+    std::map<std::string, sf::Font> fonts;
     sf::RenderWindow *window;
     bool quit;
     std::stack<State *> *states;
@@ -43,7 +44,7 @@ public:
     virtual void render(sf::RenderTarget *target = nullptr) = 0;
 
     /// @brief Load all the textures of the scene
-    virtual void loadTextures() = 0;
+    virtual void loadRes() = 0;
 
     virtual void showDebugOptions();
 };

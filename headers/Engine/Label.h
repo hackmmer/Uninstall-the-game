@@ -18,6 +18,7 @@ namespace eng
         sf::Font font;
         sf::Color color = sf::Color::White;
 
+        Label();
         Label(std::string text, const uint &size, const float &x, const float &y, sf::Font font);
         virtual ~Label();
 
