@@ -88,8 +88,10 @@ void Game::render()
     this->window->clear();
     // Items to render
     if(!this->states.empty())
+    {
         this->states.top()->render();
-
+        this->states.top()->showDebugOptions();
+    }
     this->window->display();
 }
 
@@ -103,6 +105,7 @@ void Game::update()
     {
         this->states.top()->updateMouse();
         this->states.top()->update(this->dt);
+        this->states.top()->endStateUpdate();
         if(this->states.top()->getQuit())
         {
             this->states.top()->endState();

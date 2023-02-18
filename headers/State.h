@@ -24,7 +24,7 @@ public:
 
     virtual void updateMouse();
 
-    /// @brief Updates if the game is gonna quit
+    /// @brief Updates if the state is gonna quit
     virtual void endStateUpdate() = 0;
 
     /// @brief Verifies if quit?

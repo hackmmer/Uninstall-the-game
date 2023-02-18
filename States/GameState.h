@@ -7,8 +7,6 @@ class GameState : public State
 protected:
     Player *player;
     void initPlayer();
-    eng::Label *Title;
-    std::map<std::string, eng::Button *> btns;
     bool f5;
 
 public:
