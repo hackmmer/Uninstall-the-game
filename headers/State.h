@@ -7,6 +7,8 @@
 
 class State
 {
+private:
+    bool f5;
 
 protected:
     std::map<std::string, sf::Texture> textures;

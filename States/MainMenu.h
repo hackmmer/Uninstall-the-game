@@ -7,6 +7,7 @@ class MainMenuState : public State
 {
     protected:
         eng::Label Title;
+        std::map<std::string, eng::Button*> buttons;
     public:
         MainMenuState(sf::RenderWindow *window, std::stack<State *> *states);
         virtual ~MainMenuState();

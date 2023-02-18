@@ -29,6 +29,14 @@ void State::endState()
 
 void State::showDebugOptions()
 {
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::F5) && !this->f5)
+        {
+            this->showDebug = !this->showDebug;
+            this->f5 = true;
+        }
+        else if(!sf::Keyboard::isKeyPressed(sf::Keyboard::F5))
+            this->f5 = false;
+
     if(this->showDebug)
     {
         sf::Text text;
