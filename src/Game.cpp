@@ -24,8 +24,7 @@ void Game::initWindow()
     else
     {
         /// @brief Cannot to load file config window
-        std::cerr << "Cannot open Config/window.ini file" << std::endl;
-        return;
+        throw "Cannot open Config/window.ini file";
     }
 
     this->window = new sf::RenderWindow(winDimension, "Game Title"); // Game Title es cambiable

@@ -38,13 +38,8 @@ void GameState::update(const float &dt)
 {
     if (!this->pause)
     {
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::F5) && !this->f5)
-        {
-            this->showDebug = !this->showDebug;
-            this->f5 = true;
-        }
-        else if(!sf::Keyboard::isKeyPressed(sf::Keyboard::F5))
-            this->f5 = false;
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+            this->quit = true;
     }
 }
 

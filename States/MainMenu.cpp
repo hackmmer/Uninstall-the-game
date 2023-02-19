@@ -42,7 +42,7 @@ void MainMenuState::update(const float &dt)
     if (!this->pause)
     {
         this->Title.update(dt);
-        this->buttons["StartGame"]->update(this->MousePos);
+        this->updateButtons();
     }
 }
 
@@ -52,4 +52,19 @@ void MainMenuState::render(sf::RenderTarget *target)
         target = this->window;
     this->Title.draw(window);
     this->buttons["StartGame"]->draw(window);
+}
+
+void MainMenuState::updateButtons()
+{
+    for (auto it : this->buttons)
+    {
+        it.second->update(this->MousePos);
+        if (it.second->isJustPressed())
+        {
+            if (it.first == "StartGame")
+            {
+                this->states->push(new GameState(this->window, this->states));
+            }
+        }
+    }
 }

@@ -1,7 +1,7 @@
 #ifndef _GAME_STATE_H
 #define _GAME_STATE_H
-#include "State.h"
 
+#include "States.h"
 class GameState : public State
 {
 protected:

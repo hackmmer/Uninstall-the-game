@@ -18,7 +18,7 @@ namespace eng
         // T tag;
 
     public:
-        Button(float x, float y, sf::Texture normal, const std::string text, sf::Font font, sf::Color textColor = sf::Color::White, unsigned int textSize = 27);
+        Button(float x, float y, sf::Texture normal, const std::string text, sf::Font font, sf::Color textColor = sf::Color::White, unsigned int textSize = 21);
         virtual ~Button();
 
         /*

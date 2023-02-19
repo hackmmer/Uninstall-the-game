@@ -1,7 +1,7 @@
 #ifndef __MAIN_MENU_H
 #define __MAIN_MENU_H
 
-#include "State.h"
+#include "States.h"
 
 class MainMenuState : public State
 {
@@ -16,6 +16,7 @@ class MainMenuState : public State
         void endStateUpdate();
         void update(const float& dt);
         void render(sf::RenderTarget *window);
+        void updateButtons();
 
 };
 

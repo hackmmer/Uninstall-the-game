@@ -92,7 +92,7 @@ void eng::Button::draw(sf::RenderTarget *target)
         this->image.setTexture(this->currentTexture);
         target->draw(this->image);
         if (!this->text)
-            throw "EXCEPTION";
+            throw "EXCEPTION::CANNOT_LOAD_TEXT";
         target->draw(*this->text);
     }
 }
