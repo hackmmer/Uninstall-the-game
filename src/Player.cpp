@@ -65,7 +65,7 @@ void Player::initializeVariables()
         afinity->luz = 3;
         break;
     }
-    this->speed *= 100;
+    this->speed *= 1.33;
     this->afinidades = afinity;
 }
 
@@ -76,6 +76,19 @@ Player::Player(const float x, const float y, sf::Texture *texture, int Race) : r
     this->setPosition(x, y);
 }
 
+void Player::update(float const &dt)
+{
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+        this->move(-1 * this->speed, 0, dt);
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+        this->move(1 * this->speed, 0, dt);
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+        this->move(0, 1 * this->speed, dt);
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+        this->move(0, -1 * this->speed, dt);
+}
+
 Player::~Player()
 {
+    delete this->afinidades;
 }

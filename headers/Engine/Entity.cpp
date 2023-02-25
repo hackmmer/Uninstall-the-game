@@ -2,13 +2,9 @@
 
 void eng::Entity::move(const float x, const float y, const float &dt)
 {
-    this->x = x * speed * dt;
-    this->y = y * speed * dt;
+    this->x = x * dt;
+    this->y = y * dt;
     this->sprite->move(sf::Vector2f(x, y));
-}
-
-void eng::Entity::update(const float &dt)
-{
 }
 
 void eng::Entity::draw(sf::RenderTarget *target)

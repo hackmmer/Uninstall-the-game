@@ -39,6 +39,8 @@ public:
         CHESIRAT
     };
 
+    void update(const float &dt);
+
     Player(const float x, const float y, sf::Texture *texture, int Race);
     virtual ~Player();
 };

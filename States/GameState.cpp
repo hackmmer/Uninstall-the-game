@@ -2,7 +2,7 @@
 
 void GameState::initPlayer()
 {
-    
+    this->player = new Player(15, 15, &this->textures["PLAYERY_TEST"], Player::HUMAN);
 }
 
 GameState::GameState(sf::RenderWindow *window, std::stack<State *> *states) : State(window, states)
@@ -25,7 +25,9 @@ void GameState::endStateUpdate()
 
 void GameState::loadRes()
 {
-    // this->textures["PLAYER_IDLE"].loadFromXXX and we save it like this...
+    sf::Texture temp;
+    temp.loadFromFile("/home/blizz/Projects/Zeno-Survival-Project/Textures/Entitys/Player/test.png");
+    this->textures["PLAYERY_TEST"] = temp;
 }
 
 void GameState::endState()
@@ -40,6 +42,7 @@ void GameState::update(const float &dt)
     {
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
             this->quit = true;
+        this->player->update(dt);
     }
 }
 
@@ -47,5 +50,5 @@ void GameState::render(sf::RenderTarget *target)
 {
     if (!target)
         target = this->window;
-    //this->showDebugOptions();
+    this->player->draw(target);
 }

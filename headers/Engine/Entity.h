@@ -12,13 +12,15 @@ namespace eng
         sf::Texture *EntityTexture;
         float speed;
 
+        sf::Rect<float> colisionArea;
+
         float x;
         float y;
 
     public:
         virtual void move(float x, float y, const float &dt);
 
-        virtual void update(const float &dt);
+        virtual void update(const float &dt) = 0;
         virtual void draw(sf::RenderTarget *target);
 
         void loadSprite(sf::Texture *texture);
