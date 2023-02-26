@@ -30,9 +30,11 @@ La historia aún esta en desarrollo...
 
 ## Futuras Plataformas soportadas
 
-* Windows
-* Linux
-* Android (En investigacion...)
+* [x] Windows
+
+* [x]  Linux
+
+* [] Android
 
 ## Contacto de los desarrolladores
 
