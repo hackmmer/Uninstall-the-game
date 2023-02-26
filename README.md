@@ -34,7 +34,7 @@ La historia aún esta en desarrollo...
 
 * [x]  Linux
 
-* [] Android
+* [ ] Android
 
 ## Contacto de los desarrolladores
 
