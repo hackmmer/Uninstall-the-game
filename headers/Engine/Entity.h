@@ -10,14 +10,15 @@ namespace eng
     protected:
         sf::Sprite *sprite;
         sf::Texture *EntityTexture;
-        float speed;
 
         sf::Rect<float> colisionArea;
+
+    public:
+        float speed;
 
         float x;
         float y;
 
-    public:
         virtual void move(float x, float y, const float &dt);
 
         virtual void update(const float &dt) = 0;

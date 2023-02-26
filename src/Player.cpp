@@ -29,7 +29,7 @@ void Player::initializeVariables()
         this->force = 7;
         this->destreza = 2;
         this->vitalidad = 5;
-        this->speed = 2;
+        this->speed = 1;
         afinity->agua = 4;
         afinity->tierra = 2;
         afinity->luz = 2;
@@ -49,7 +49,7 @@ void Player::initializeVariables()
         this->force = 5;
         this->destreza = 5;
         this->vitalidad = 4;
-        this->speed = 6;
+        this->speed = 3;
         afinity->fuego = 6;
         afinity->rayo = 3;
         afinity->tierra = 3;
@@ -59,7 +59,7 @@ void Player::initializeVariables()
         this->force = 2;
         this->destreza = 8;
         this->vitalidad = 2;
-        this->speed = 8;
+        this->speed = 5;
         afinity->aire = 6;
         afinity->dark = 3;
         afinity->luz = 3;

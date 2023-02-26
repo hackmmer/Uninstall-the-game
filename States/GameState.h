@@ -13,9 +13,9 @@ public:
     GameState(sf::RenderWindow *window, std::stack<State *> *states);
     virtual ~GameState();
 
-    void btn1();
-
     void endStateUpdate();
+
+    void showDebugOptions();
 
     /// @brief Here we load all the textures of the scene
     void loadRes();

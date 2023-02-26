@@ -19,7 +19,7 @@ class Player : public eng::Entity
 private:
     void initializeVariables();
 
-protected:
+public:
     int life;
     int race;
 
@@ -27,8 +27,6 @@ protected:
     int destreza;
     int vitalidad;
     Afinity *afinidades;
-
-public:
     // need to add the other them
     enum Races
     {
