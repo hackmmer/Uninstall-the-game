@@ -13,6 +13,7 @@ void Player::initializeVariables()
     switch (this->race)
     {
     case Player::Races::HUMAN:
+        this->s_race = "HUMAN";
         this->life = 200;
         this->force = 4;
         this->destreza = 4;
@@ -25,6 +26,7 @@ void Player::initializeVariables()
         afinity->tierra = 2;
         break;
     case Player::Races::HAMPHER:
+        this->s_race = "HAMPHER";
         this->life = 300;
         this->force = 7;
         this->destreza = 2;
@@ -36,6 +38,7 @@ void Player::initializeVariables()
         afinity->dark = 2;
         break;
     case Player::Races::ERINON:
+        this->s_race = "ERINON";
         this->life = 240;
         this->force = 3;
         this->destreza = 3;
@@ -45,6 +48,7 @@ void Player::initializeVariables()
         afinity->aire = 6;
         break;
     case Player::Races::CORKE:
+        this->s_race = "CORKE";
         this->life = 170;
         this->force = 5;
         this->destreza = 5;
@@ -55,6 +59,7 @@ void Player::initializeVariables()
         afinity->tierra = 3;
         break;
     case Player::Races::CHESIRAT:
+        this->s_race = "CHESIRAT";
         this->life = 150;
         this->force = 2;
         this->destreza = 8;
@@ -65,7 +70,16 @@ void Player::initializeVariables()
         afinity->luz = 3;
         break;
     }
-    this->speed *= 1.33;
+    this->speed *= 7.33;
+    
+    // For normalize the race string
+    for(auto it = this->s_race.begin(); it != this->s_race.end(); ++it)
+    {
+        if(it == this->s_race.begin())
+            continue;
+        *it = *it + 32;
+    }
+    
     this->afinidades = afinity;
 }
 
@@ -79,13 +93,13 @@ Player::Player(const float x, const float y, sf::Texture *texture, int Race) : r
 void Player::update(float const &dt)
 {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-        this->move(-1 * this->speed, 0, dt);
+        this->movement->move(-1 * this->speed, 0, dt);
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-        this->move(1 * this->speed, 0, dt);
+        this->movement->move(1 * this->speed, 0, dt);
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-        this->move(0, 1 * this->speed, dt);
+        this->movement->move(0, 1 * this->speed, dt);
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
-        this->move(0, -1 * this->speed, dt);
+        this->movement->move(0, -1 * this->speed, dt);
 }
 
 Player::~Player()

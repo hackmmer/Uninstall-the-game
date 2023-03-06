@@ -32,4 +32,7 @@ namespace eng
         virtual void update(T) = 0;
     };
 }
+
+/// @brief An instance of Object<const float&>
+typedef class eng::Object<const float&> ObjectF;
 #endif

@@ -2,24 +2,26 @@
 #define __E_ENTITY_H
 
 #include "Object.h"
+#include "MovementC.h"
 
 namespace eng
 {
-    class Entity : public Object<const float &>
+    class Entity : public ObjectF
     {
     protected:
         sf::Sprite *sprite;
         sf::Texture *EntityTexture;
 
         sf::Rect<float> colisionArea;
+        eng::MovementC *movement;
+
+        void createMovementC(sf::Sprite *sprite, float maxSpeed = 1);
 
     public:
         float speed;
 
         float x;
         float y;
-
-        virtual void move(float x, float y, const float &dt);
 
         virtual void update(const float &dt) = 0;
         virtual void draw(sf::RenderTarget *target);

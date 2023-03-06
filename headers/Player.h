@@ -22,6 +22,7 @@ private:
 public:
     int life;
     int race;
+    std::string s_race;
 
     int force;
     int destreza;
@@ -38,6 +39,8 @@ public:
     };
 
     void update(const float &dt);
+
+    std::string getRace();
 
     Player(const float x, const float y, sf::Texture *texture, int Race);
     virtual ~Player();
